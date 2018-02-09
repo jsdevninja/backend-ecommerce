@@ -1,0 +1,11 @@
+{
+  "secret": "SECRETO_PARA_ENCRIPTACION",
+  "port":3000,
+  "database" : {
+    "username": "root",
+    "password": "mysql",
+    "database": "gohub",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

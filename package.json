@@ -1,0 +1,29 @@
+{
+  "name": "my-hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@now-ims/hapi-now-auth": "^1.0.1",
+    "boom": "^5.2.0",
+    "config": "^1.26.1",
+    "good": "^8.0.0-rc1",
+    "good-console": "^6.4.1",
+    "hapi": "^17.2.0",
+    "jsonwebtoken": "^8.1.0",
+    "lodash": "^4.17.4",
+    "mysql2": "^1.5.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "pg": "^7.0.2",
+    "rand-token": "^0.4.0",
+    "require-directory": "^2.1.1",
+    "sequelize": "^4.29.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
