@@ -1,7 +1,8 @@
 'use strict';
 
 const Hapi = require('hapi')
-const HapiNowAuth = require('@now-ims/hapi-now-auth');
+const Glue = require('glue');
+const Manifest = require('./manifest');
 
 const path = require('path')
 const settings = require('config')
@@ -10,19 +11,12 @@ const routes = require('./routes')
 const plugins = require('./plugins')
 const models = require('./models')
 
-const server = new Hapi.Server({debug: {
-    request: ['received']
-}, port: settings.port, host: settings.host})
 
-server.events.on('log', (event, tags) => {
-
-    if (tags.error) {
-        console.log(`Server error: ${event.error ? event.error.message : 'unknown'}`);
-    }
-});
+// const server = new Hapi.Server({debug: {
+//     request: ['received']
+// }, port: settings.port, host: settings.host})
 
 // Export the server to be required elsewhere.
-module.exports = server
 
 /*
  var initDb = function(cb){
@@ -44,13 +38,15 @@ module.exports = server
  */
 
 async function startServer() {
-    try {
-        await server.register(HapiNowAuth);
-    } catch (error) {
-        console.error(error);
-        process.exit(1);
-    }
+    const options = { relativeTo: __dirname };
+    const server = await Glue.compose(Manifest, options);
+    server.events.on('log', (event, tags) => {
 
+        if (tags.error) {
+            console.log(`Server error: ${event.error ? event.error.message : 'unknown'}`);
+        }
+    });
+    module.exports = server;
 
     server.auth.strategy('jwt-strategy', 'hapi-now-auth', {
         verifyJWT: true,

@@ -9,7 +9,9 @@
     "config": "^1.26.1",
     "good": "^8.0.0-rc1",
     "good-console": "^6.4.1",
-    "hapi": "^17.2.0",
+    "hapi": "^17.x.x",
+    "hapi-route-hierarchy": "^2.0.1",
+    "glue": "5.x.x",
     "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.4",
     "mysql2": "^1.5.1",
@@ -20,8 +22,11 @@
     "require-directory": "^2.1.1",
     "sequelize": "^4.29.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  },
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
