@@ -6,15 +6,7 @@ const Manifest = require('./manifest');
 
 const path = require('path')
 const settings = require('config')
-
-const routes = require('./routes')
-const plugins = require('./plugins')
-const models = require('./models')
-
-
-// const server = new Hapi.Server({debug: {
-//     request: ['received']
-// }, port: settings.port, host: settings.host})
+const models = require('./server/models')
 
 // Export the server to be required elsewhere.
 
@@ -71,8 +63,6 @@ async function startServer() {
     });
 
     server.auth.default('jwt-strategy');
-
-    server.route(routes)
 
     try {
         await server.start();
