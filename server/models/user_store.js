@@ -34,6 +34,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'default_store'
     }
   }, {
-    tableName: 'user_store'
+    tableName: 'user_store',
+    timestamps: false,
   });
 };

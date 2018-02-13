@@ -23,6 +23,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'child'
     }
   }, {
-    tableName: 'auth_item_child'
+    tableName: 'auth_item_child',
+    timestamps: false,
   });
 };

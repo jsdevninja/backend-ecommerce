@@ -19,6 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'data'
     }
   }, {
-    tableName: 'session'
+    tableName: 'session',
+    timestamps: false,
   });
 };

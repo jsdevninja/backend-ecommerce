@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'allowed_role_name'
     }
   }, {
-    tableName: 'allowed_role'
+    tableName: 'allowed_role',
+    timestamps: false,
   });
 };

@@ -14,14 +14,16 @@ module.exports = function(sequelize, DataTypes) {
       field: 'data'
     },
     createdAt: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.DATE,
       allowNull: true,
-      field: 'created_at'
+      field: 'created_at',
+      defaultValue: new Date()
     },
     updatedAt: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.DATE,
       allowNull: true,
-      field: 'updated_at'
+      field: 'updated_at',
+      defaultValue: new Date()
     }
   }, {
     tableName: 'auth_rule'

@@ -47,7 +47,7 @@ module.exports = function(sequelize, DataTypes) {
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: 'CURRENT_TIMESTAMP(6)',
+      defaultValue: new Date(),
       field: 'created_at'
     },
     createdBy: {
@@ -56,6 +56,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'created_by'
     }
   }, {
-    tableName: 'product_sku_image'
+    tableName: 'product_sku_image',
+    updatedAt: false,
   });
 };

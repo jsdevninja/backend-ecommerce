@@ -19,11 +19,13 @@ module.exports = function(sequelize, DataTypes) {
       field: 'user_id'
     },
     createdAt: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.DATE,
       allowNull: true,
-      field: 'created_at'
+      field: 'created_at',
+      defaultValue: new Date()
     }
   }, {
-    tableName: 'auth_assignment'
+    tableName: 'auth_assignment',
+    updatedAt: false,
   });
 };

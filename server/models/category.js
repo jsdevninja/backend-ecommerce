@@ -120,6 +120,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'removable_all'
     }
   }, {
-    tableName: 'category'
+    tableName: 'category',
+    timestamps: false,
   });
 };

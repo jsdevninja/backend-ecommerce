@@ -28,6 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'allowed_role_id'
     }
   }, {
-    tableName: 'product_sku_pricing_allowed_role'
+    tableName: 'product_sku_pricing_allowed_role',
+    timestamps: false,
   });
 };

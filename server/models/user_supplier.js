@@ -28,6 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'supplier_id'
     }
   }, {
-    tableName: 'user_supplier'
+    tableName: 'user_supplier',
+    timestamps: false,
   });
 };

@@ -14,6 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'apply_time'
     }
   }, {
-    tableName: 'migration'
+    tableName: 'migration',
+    timestamps: false,
   });
 };

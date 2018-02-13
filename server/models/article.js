@@ -44,14 +44,16 @@ module.exports = function(sequelize, DataTypes) {
       field: 'category'
     },
     createdAt: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.DATE,
       allowNull: false,
-      field: 'created_at'
+      field: 'created_at',
+      defaultValue: new Date()
     },
     updatedAt: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.DATE,
       allowNull: false,
-      field: 'updated_at'
+      field: 'updated_at',
+      defaultValue: new Date()
     }
   }, {
     tableName: 'article'

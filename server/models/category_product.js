@@ -34,6 +34,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'primary_category'
     }
   }, {
-    tableName: 'category_product'
+    tableName: 'category_product',
+    timestamps: false,
   });
 };

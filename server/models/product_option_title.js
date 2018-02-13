@@ -40,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+      defaultValue: new Date(),
       field: 'created_at'
     },
     createdBy: {
@@ -49,6 +49,7 @@ module.exports = function(sequelize, DataTypes) {
       field: 'created_by'
     }
   }, {
-    tableName: 'product_option_title'
+    tableName: 'product_option_title',
+    updatedAt: false,
   });
 };

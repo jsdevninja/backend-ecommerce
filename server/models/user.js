@@ -58,14 +58,16 @@ module.exports = function(sequelize, DataTypes) {
       field: 'account_activation_token'
     },
     createdAt: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.DATE,
       allowNull: false,
-      field: 'created_at'
+      field: 'created_at',
+      defaultValue: new Date()
     },
     updatedAt: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.DATE,
       allowNull: false,
-      field: 'updated_at'
+      field: 'updated_at',
+      defaultValue: new Date()
     },
     userStatus: {
       type: DataTypes.INTEGER(3).UNSIGNED,
