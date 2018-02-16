@@ -4,6 +4,12 @@ var controllers =require('../controllers');
 const register = function (server, serverOptions) {
     server.route({
         method: 'GET',
+        path: '/users/me',
+        handler: controllers.users.me,
+    });
+
+    server.route({
+        method: 'GET',
         path: '/users/users',
         handler: controllers.users.get,
     });

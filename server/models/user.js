@@ -9,12 +9,6 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       field: 'id'
     },
-    username: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-      unique: true,
-      field: 'username'
-    },
     email: {
       type: DataTypes.STRING(255),
       allowNull: false,
@@ -28,23 +22,13 @@ module.exports = function(sequelize, DataTypes) {
     },
     status: {
       type: DataTypes.INTEGER(6),
-      allowNull: false,
+      allowNull: true,
       field: 'status'
     },
     authKey: {
       type: DataTypes.STRING(32),
-      allowNull: false,
+      allowNull: true,
       field: 'auth_key'
-    },
-    token: {
-      type: DataTypes.STRING(64),
-      allowNull: true,
-      field: 'token'
-    },
-    accessToken: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
-      field: 'access_token'
     },
     passwordResetToken: {
       type: DataTypes.STRING(255),
@@ -71,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     userStatus: {
       type: DataTypes.INTEGER(3).UNSIGNED,
-      allowNull: false,
+      allowNull: true,
       field: 'user_status'
     }
   }, {
