@@ -11,6 +11,7 @@ const register = function (server, serverOptions) {
         handler: controllers.auth.login,
         options: {
             auth: false,
+            tags: ['api'],
             validate: {
                 payload: {
                     email: Joi.string().email().required(),
@@ -43,6 +44,7 @@ const register = function (server, serverOptions) {
         handler: controllers.auth.signup,
         options: {
             auth: false,
+            tags: ['api'],
             validate: {
                 payload: {
                     email: Joi.string().email().required(),
@@ -75,11 +77,15 @@ const register = function (server, serverOptions) {
         path: '/auth/changePassword',
         handler: controllers.auth.changePassword,
         options: {
+            tags: ['api'],
             validate: {
                 payload: {
                     originPassword: Joi.string().required(),
                     newPassword: Joi.string().required()
-                }
+                },
+                headers: Joi.object({
+                    'authorization': Joi.string()
+                }).unknown()
             },
             pre: [
                 {
@@ -120,6 +126,14 @@ const register = function (server, serverOptions) {
         method: 'GET',
         path: '/auth/testjwt',
         handler: controllers.auth.test_jwt,
+        options: {
+            tags: ['api'],
+            validate: {
+                headers: Joi.object({
+                    'authorization': Joi.string()
+                }).unknown()
+            }
+        }
     });
 }
 

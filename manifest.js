@@ -1,5 +1,8 @@
 'use strict';
 const settings = require('config');
+const Inert = require('inert');
+const Vision = require('vision');
+const HapiSwagger = require('hapi-swagger');
 
 const manifest = {
     // $meta: 'This file defines the plot device.',
@@ -24,6 +27,21 @@ const manifest = {
             {
                 plugin: './server/api/users'
             },
+            {
+                plugin: Inert
+            },
+            {
+                plugin: Vision
+            },
+            {
+                plugin: HapiSwagger,
+                options: {
+                    info: {
+                        title: 'API Documentation'
+                    },
+                    payloadType: 'form',
+                }
+            }
             //set up good to log every kind of event. Change according to your needs.
             /*
             {
